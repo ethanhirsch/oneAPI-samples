@@ -13,7 +13,7 @@
 #include "../stb/stb_image_write.h"
 
 constexpr int size_n = 0;
-constexpr int img_dimensions = 32;
+constexpr int img_dimensions = 64;
 constexpr int radius = img_dimensions / 2;
 constexpr double circle_outline = 0.025;
 
@@ -79,8 +79,8 @@ int main(){
 
     // Draw the inscribed circle for the image plot
     //DrawPlot(image_plot);
-    for (int i = 0; i < 8; i++){
-        image_plot[i + (32 * 8)].green = 255;
+    for (int i = 0; i < 16; i++){
+        image_plot[i + (64 * 16)].green = 255;
     }
 
     // Perform Monte Carlo simulation to estimate pi (with timing)
