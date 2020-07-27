@@ -80,6 +80,7 @@ int main(){
     // Draw the inscribed circle for the image plot
     //DrawPlot(image_plot);
     for (int i = 0; i < 16; i++){
+        int index = i / 4 * 64 + i % 4;
         image_plot[i + (64 * 16)].green = 255;
     }
 
