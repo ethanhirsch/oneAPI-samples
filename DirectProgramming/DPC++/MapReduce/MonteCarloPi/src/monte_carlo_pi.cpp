@@ -81,7 +81,7 @@ int main(){
     //DrawPlot(image_plot);
     for (int i = 0; i < 16; i++){
         int index = i / 4 * 64 + i % 4;
-        image_plot[i + (64 * 16)].green = 255;
+        image_plot[index + (64 * 16)].green = 255;
     }
 
     // Perform Monte Carlo simulation to estimate pi (with timing)
