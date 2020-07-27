@@ -80,7 +80,7 @@ int main(){
     // Draw the inscribed circle for the image plot
     //DrawPlot(image_plot);
     for (int i = 0; i < 64; i++){
-        image_plot[i].green = 255;
+        image_plot[i + (128 * 32)].green = 255;
     }
 
     // Perform Monte Carlo simulation to estimate pi (with timing)
