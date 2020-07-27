@@ -12,8 +12,8 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "../stb/stb_image_write.h"
 
-constexpr int size_n = 10000;
-constexpr int img_dimensions = 1024;
+constexpr int size_n = 0;
+constexpr int img_dimensions = 128;
 constexpr int radius = img_dimensions / 2;
 constexpr double circle_outline = 0.025;
 
@@ -78,14 +78,17 @@ int main(){
     rgb* image_plot = (rgb*) calloc(img_dimensions * img_dimensions, sizeof(rgb));
 
     // Draw the inscribed circle for the image plot
-    DrawPlot(image_plot);
+    //DrawPlot(image_plot);
+    for (int i = 0; i < 64; i++){
+        image_plot[i].green = 255;
+    }
 
     // Perform Monte Carlo simulation to estimate pi (with timing)
-    std::cout << "Calculating estimated value of pi..." << std::endl;
-    dpc_common::TimeInterval t;
-    MonteCarloPi(image_plot);
-    double proc_time = t.Elapsed();
-    std::cout << "Computation complete. The processing time was " << proc_time << " seconds." << std::endl;
+    //std::cout << "Calculating estimated value of pi..." << std::endl;
+    //dpc_common::TimeInterval t;
+    //MonteCarloPi(image_plot);
+    //double proc_time = t.Elapsed();
+    //std::cout << "Computation complete. The processing time was " << proc_time << " seconds." << std::endl;
 
     // Write image to file
     stbi_write_bmp("MonteCarloPi.bmp", img_dimensions, img_dimensions, 3, image_plot);
