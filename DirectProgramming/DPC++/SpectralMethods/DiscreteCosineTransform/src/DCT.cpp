@@ -245,9 +245,15 @@ void ProcessImage(rgb* indataset, rgb* outdataset, int width, int height) {
       h.parallel_for(
           range<2>(width / block_dims, height / block_dims), [=](id<2> idx) {
             int start_index = idx[0] * block_dims + idx[1] * block_dims * width;
-            ProcessBlock(i_acc.get_pointer(), o_acc.get_pointer(),
-                         d_acc.get_pointer(), di_acc.get_pointer(), start_index,
-                         width);
+            float shader;
+            if (idx[0] % 2) shader = 0.7;
+            else shader = 0.9;
+            for (int i = 0; i < 64; i++){
+              int local_index = i / block_dims * width + i % block_dims;
+              o_acc[local_index + start_index].red = i_acc[local_index + start_index].red * shader;
+              o_acc[local_index + start_index].green = i_acc[local_index + start_index].green * shader;
+              o_acc[local_index + start_index].blue = i_acc[local_index + start_index].blue * shader;
+            }
           });
     });
     q.wait_and_throw();
