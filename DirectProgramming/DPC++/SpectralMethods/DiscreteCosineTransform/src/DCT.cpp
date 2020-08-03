@@ -246,7 +246,7 @@ void ProcessImage(rgb* indataset, rgb* outdataset, int width, int height) {
           range<2>(width / block_dims, height / block_dims), [=](id<2> idx) {
             int start_index = idx[0] * block_dims + idx[1] * block_dims * width;
             float shader;
-            if (idx[0] % 2) shader = 0.7;
+            if ((idx[0] % 2 && idx[1] % 2) || (!(idx[0] % 2) && !(idx[1] % 2))) shader = 0.7;
             else shader = 0.9;
             for (int i = 0; i < 64; i++){
               int local_index = i / block_dims * width + i % block_dims;
