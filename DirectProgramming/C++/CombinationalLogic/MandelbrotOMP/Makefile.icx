@@ -25,6 +25,7 @@ icx: $(TARGET)
 
 SOURCES := $(wildcard $(SRCDIR)/*.cpp)
 
+make:
 $(CXX) $(CFLAGS) -o $(TARGET)
 
 run: $(TARGET)
