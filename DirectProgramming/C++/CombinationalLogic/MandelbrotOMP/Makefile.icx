@@ -14,6 +14,7 @@ CXX := icx
 SRCDIR := src
 BUILDDIR := release
 CFLAGS := -O3 -ipo -qopenmp -std=c++11
+EXTRA_CFLAGS :=
 
 ifdef perf_num
 	EXTRA_CFLAGS += -D PERF_NUM
@@ -21,12 +22,11 @@ endif
 
 TARGET := $(BUILDDIR)/MergeSort
 
-icx: $(TARGET)
-
 SOURCES := $(wildcard $(SRCDIR)/*.cpp)
 
 make:
-$(CXX) $(CFLAGS) -o $(TARGET)
+	@mkdir -p $(BUILDDIR)
+	$(CXX) $(CFLAGS) $(EXTRA_CFLAGS) $(SOURCES) -o $(TARGET)
 
 run: $(TARGET)
 ifeq ($(shell uname -s),Darwin)
