@@ -44,17 +44,17 @@ Perform the following steps:
 1. Build the program using the following `make` commands. 
 ``` 
 $ export perf_num=1     *optional, will enable performance tabulation mode
-$ make
+$ make -f Makefile.<icx/icpc>   *there are two separate makefiles depending on the desired compiler
 ```
 
 2. Run the program:
     ```
-    make run
+    make run -f Makefile.<icx/icpc>
     ```
 
 3. Clean the program using:
     ```
-    make clean
+    make clean -f Makefile.<icx/icpc>
     ```
 
 

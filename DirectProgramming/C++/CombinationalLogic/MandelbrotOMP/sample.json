@@ -9,12 +9,16 @@
     "guid": "DD113F58-4D91-41BB-B46E-6CF2C0D9F6F9",
     "ciTests": {
         "linux": [
-            { "id": "standard", "steps": [ "make", "make run", "make clean" ] },
-            { "id": "perf_num", "env": [ "export perf_num=1" ], "steps": [ "make", "make run", "make clean" ] }
+            { "id": "icpc standard", "steps": [ "make -f Makefile.icpc", "make run -f Makefile.icpc", "make clean -f Makefile.icpc" ] },
+            { "id": "icpc perf_num", "env": [ "export perf_num=1" ], "steps": [ "make -f Makefile.icpc", "make run -f Makefile.icpc", "make clean -f Makefile.icpc" ] },
+            { "id": "icx standard", "steps": [ "make -f Makefile.icx", "make run -f Makefile.icx", "make clean -f Makefile.icx" ] },
+            { "id": "icx perf_num", "env": [ "export perf_num=1" ], "steps": [ "make -f Makefile.icx", "make run -f Makefile.icx", "make clean -f Makefile.icx" ] }
         ],
         "darwin": [ 
-            { "id": "standard", "steps": [ "make", "make run", "make clean" ] },
-            { "id": "perf_num", "env": [ "export perf_num=1" ], "steps": [ "make", "make run", "make clean" ] }
+            { "id": "icpc standard", "steps": [ "make -f Makefile.icpc", "make run -f Makefile.icpc", "make clean -f Makefile.icpc" ] },
+            { "id": "icpc perf_num", "env": [ "export perf_num=1" ], "steps": [ "make -f Makefile.icpc", "make run -f Makefile.icpc", "make clean -f Makefile.icpc" ] },
+            { "id": "icx standard", "steps": [ "make -f Makefile.icx", "make run -f Makefile.icx", "make clean -f Makefile.icx" ] },
+            { "id": "icx perf_num", "env": [ "export perf_num=1" ], "steps": [ "make -f Makefile.icx", "make run -f Makefile.icx", "make clean -f Makefile.icx" ] }
         ]
     }
 }
