@@ -10,7 +10,7 @@
 # PURPOSE, NON-INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS.
 #
 # =============================================================
-CXX := icpc
+CXX := icx
 SRCDIR := src
 BUILDDIR := release
 CFLAGS := -O3 -ipo -qopenmp -std=c++11
@@ -23,7 +23,7 @@ endif
 
 TARGET := $(BUILDDIR)/MergeSort
 
-icpc: $(TARGET)
+icx: $(TARGET)
 
 SOURCES := $(wildcard $(SRCDIR)/*.cpp)
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.cpp=.o))
