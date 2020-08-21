@@ -15,7 +15,7 @@ SRCDIR := src
 BUILDDIR := release
 CFLAGS := -O3 -ipo -qopenmp -std=c++11
 EXTRA_CFLAGS :=
-LIBFLAGS := -ipo -flto -qopenmp
+LIBFLAGS := -ipo -flto -qopenmp -std=c++11
 
 ifdef perf_num
 	EXTRA_CFLAGS += -D PERF_NUM
